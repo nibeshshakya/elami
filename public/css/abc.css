@@ -1,0 +1,51 @@
+/* navbar maroon */
+.navbar-maroon {
+    background-color: #b30801;
+    border: none;
+}
+/* change logo text color and hover color */
+.navbar-maroon .navbar-brand {
+    color: #fff
+}
+.navbar-maroon .navbar-brand:hover, .navbar-maroon .navbar-brand:focus {
+    color:#ccc
+}
+/* Change nav links color */
+.navbar-maroon .navbar-nav > li > a {
+    color:#e7e7e7
+}
+.navbar-maroon .navbar-nav > li > a:hover {
+    color:#fff
+}
+/* change visited color */
+.navbar-maroon .navbar-nav > li > a:focus {
+    color:#fff
+}
+/* form */
+.navbar-maroon .form-control {
+    border-radius:4;
+    border:none
+}
+.navbar-maroon .form-control {
+    border:1px solid #990600
+}
+.navbar-maroon .btn {
+    border:1px solid #990600
+}
+/* open drop down background color */
+.navbar-maroon .navbar-nav .open .dropdown-menu {
+    background:#fff
+}
+/* mobile toggle nav icon */
+.navbar-maroon .navbar-toggle {
+    border-color:#e7e7e7
+}
+.navbar-maroon .navbar-toggle .icon-bar {
+    background-color:#e7e7e7
+}
+.navbar-maroon .navbar-toggle:focus, .navbar-maroon .navbar-toggle:hover {
+    background-color:#fff
+}
+.navbar-maroon .navbar-toggle:focus .icon-bar, .navbar-maroon .navbar-toggle:hover .icon-bar {
+    background-color:#3b5998
+}
