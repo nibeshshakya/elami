@@ -184,37 +184,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      });
     </script>-->
     <form method="post" action="{{route('searchquery')}}">
-        {{--<div class="form_but1">--}}
-            {{--<label class="col-sm-5 control-lable1">sex : </label>--}}
-            {{--<div class="col-sm-7 form_radios">--}}
-                {{--<div class="select-block1">--}}
-                    {{--<input class="form-control has-dark-background" name=sex id="slider-name" placeholder="sex" type="text" required="">--}}
-                {{--</div>--}}
-            {{--</div>--}}
+        <div class="form_but1">
+            <label class="col-sm-5 control-lable1">sex : </label>
+            <div class="col-sm-7 form_radios">
+                <div align="">
+                    <select name="sex" class="form-control">
+                        <option value="male">male</option>
+                        <option value="female">female</option>
 
-            {{--<div class="clearfix"> </div>--}}
-        {{--</div>--}}
+                    </select>
+                </div>
+            </div>
 
-
-        {{--<div class="search_top">--}}
-            {{--<div class="inline-block">--}}
-                {{--<label class="gender_1">I am looking for :</label>--}}
-                {{--<div class="age_box1" style="max-width: 100%; display: inline-block;">--}}
-                    {{--<select name="sex">--}}
-                        {{--<option value="">* Select Gender</option>--}}
-                        {{--<option value="male">male</option>--}}
-                        {{--<option value="female">female</option>--}}
-                    {{--</select>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-
-        <div align="">
-            <label for="edit-pass">Sex <span class="form-required" title="This field is required.">*</span></label>
-            <select name="sex" class="form-control">
-                <option value="male">male</option>
-                <option value="female">female</option>
-
-            </select>
+            <div class="clearfix"> </div>
         </div>
 
         <!--   <div class="form_but1">
@@ -229,22 +211,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="clearfix"> </div>
           </div> -->
 
-        <div align="" class="col-sm-4">
-            <label for="edit-pass">age <span class="form-required" title="This field is required.">*</span></label>
-                {{--<label for="edit-pass">age<span class="form-required" title="This field is required.">*</span></label>--}}
-                <input class="transparent" name="startage" placeholder="From:" style="width: 34%;" type="text" value="">&nbsp;
-                -
-                &nbsp;
-                <input class="transparent" name="endage" placeholder="To:" style="width: 34%;" type="text" value="">
+        <div class="form_but1">
+            <label class="col-sm-5 control-lable1" for="age">Age : </label>
+            <div class="col-sm-4 form_radios">
+                <div class="select-block1">
+                    <input class="transparent" name="startage" placeholder="From:" style="width: 34%;" type="text" value="">&nbsp;
+                    -
+                    &nbsp;
+                    <input class="transparent" name="endage" placeholder="To:" style="width: 34%;" type="text" value="">
+                </div>
             </div>
-    </div>
 
-        {{--<div class="inline-block">--}}
-            {{--<div class="age_box2" style="max-width: 220px;">--}}
-                {{--<label class="gender_1">Age :</label>--}}
-                {{--<input class="transparent" placeholder="From:" style="width: 34%;" type="text" value="">&nbsp;-&nbsp;<input class="transparent" placeholder="To:" style="width: 34%;" type="text" value="">--}}
-            {{--</div>--}}
-        {{--</div>--}}
+            <div class="clearfix"> </div>
+        </div>
 
 
 
@@ -261,12 +240,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <div class="clearfix"> </div>
         </div>
-
-        <div class="clearfix"> </div>
-
-
-
-
 
 
         {{--<div class="col-sm-7 form_radios">--}}

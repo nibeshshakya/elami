@@ -35,70 +35,9 @@
     </script>
 </head>
 <body>
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-30027142-1', 'w3layouts.com');
-    ga('send', 'pageview');
-</script>
-<script async type='text/javascript' src='../../../../cdn.fancybar.net/ac/fancybar6a2f.js?zoneid=1502&amp;serve=C6ADVKE&amp;placement=w3layouts' id='_fancybar_js'></script>
-<style type='text/css'>  .adsense_fixed{position:fixed;bottom:-8px;width:100%;z-index:999999999999;}.adsense_content{width:720px;margin:0 auto;position:relative;background:#fff;}.adsense_btn_close,.adsense_btn_info{font-size:12px;color:#fff;height:20px;width:20px;vertical-align:middle;text-align:center;background:#000;top:4px;left:4px;position:absolute;z-index:99999999;font-family:Georgia;cursor:pointer;line-height:18px}.adsense_btn_info{left:26px;font-family:Georgia;font-style:italic}.adsense_info_content{display:none;width:260px;height:340px;position:absolute;top:-360px;background:rgba(255,255,255,.9);font-size:14px;padding:20px;font-family:Arial;border-radius:4px;-webkit-box-shadow:0 1px 26px -2px rgba(0,0,0,.3);-moz-box-shadow:0 1px 26px -2px rgba(0,0,0,.3);box-shadow:0 1px 26px -2px rgba(0,0,0,.3)}.adsense_info_content:after{content:'';position:absolute;left:25px;top:100%;width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #fff;clear:both}.adsense_info_content #adsense_h3{color:#000;margin:0;font-size:18px!important;font-family:'Arial'!important;margin-bottom:20px!important;}.adsense_info_content .adsense_p{color:#888;font-size:13px!important;line-height:20px;font-family:'Arial'!important;margin-bottom:20px!important;}.adsense_fh5co-team{color:#000;font-style:italic;}</style>
-<script>
-
-    $(function() {
-        $('.adsense_btn_close').click(function() {
-            $(this).closest('.adsense_fixed').css('display', 'none');
-        });
-
-        $('.adsense_btn_info').click(function() {
-            if ($('.adsense_info_content').is(':visible')) {
-                $('.adsense_info_content').css('display', 'none');
-            } else {
-                $('.adsense_info_content').css('display', 'block');
-            }
-        });
-
-    });
-
-</script>
-<body>
-
-<div class='adsense_fixed'>
-    <div class='adsense_content'> <span class='adsense_btn_close' title='Hide Ads'>x</span>
-        <div class='adsense_info_content'>
-            <h3 id='adsense_h3'>Why Ads?</h3>
-            <p class='adsense_p'>We hope you'll understand us why we display Ads here at w3layouts. We use Ads in order for us to continue working and provide you new template every day. As we all know domain, hosting servers and designers is not free and
-                for us to pay it we have to display Ads. Thank you for Supporting Us.</p>
-            <p class='adsense_p'>Love,
-                <br><span class='adsense_fh5co-team'>w3layouts Team</span></p>
-        </div><span class='adsense_btn_info' title='Why Ads'>i</span>
-
-        {{--<script async src='../../../../pagead2.googlesyndication.com/pagead/js/f.txt'></script>--}}
-        <!-- ResponsiveW3layouts -->
-        <!-- <ins class='adsbygoogle'
-             style='display:block'
-             data-ad-client='ca-pub-9153409599391170'
-             data-ad-slot='7722137086'
-             data-ad-format='auto'></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-
-        <ins class='adsbygoogle'
-             style='display:inline-block;width:728px;height:90px'
-             data-ad-client='ca-pub-9153409599391170'
-             data-ad-slot='6850850687'></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script> -->
-
-    </div>
-</div>
 
 <!-- ============================  Navigation Start =========================== -->
-<div class="navbar navbar-inverse-blue navbar navbar-fixed-top" >
+<div class="navbar navbar-inverse-blue navbar navbar-fixed-top" style="min-height: inherit;">
     <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
     <div class="navbar-inner">
         <div class="container">
@@ -151,6 +90,28 @@
             <h3>Millions of verified Members</h3>
             <!-- <a href="view_profile.html" class="hvr-shutter-out-horizontal">Create your Profile</a> -->
         </div>
+        {{--<div class="col-sm-4 ">--}}
+            {{--<form action="{{ route('login') }}" method="POST">--}}
+                {{--<div class="form-item form-type-textfield form-item-name">--}}
+                    {{--<label for="edit-name">email <span class="form-required" title="This field is required.">*</span></label>--}}
+                    {{--<input type="text" id="email" name="email" value="" size="60" maxlength="60" class="form-text required">--}}
+                {{--</div>--}}
+                {{--<div class="form-item form-type-password form-item-pass">--}}
+                    {{--<label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>--}}
+                    {{--<input type="password" id="password" name="password" size="60" maxlength="128" class="form-text required">--}}
+                {{--</div>--}}
+                {{--<div class="form-actions">--}}
+                    {{--<input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">--}}
+
+
+                    {{--<div class="form-actions">--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                    {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+                {{--</div>--}}
+            {{--</form>--}}
+        {{--</div>--}}
+
         <div class="col-sm-4 ">
             <form action="{{ route('login') }}" method="POST">
                 <div class="form-item form-type-textfield form-item-name">
@@ -172,21 +133,22 @@
                 </div>
             </form>
         </div>
+
     </div>
     <div class="profile_search ">
         <div class=" wrap_1">
             <form method="post" action="{{route('searchquery')}}">
                 {{--<div class="search_top">--}}
-                    <div class="inline-block">
-                        <label class="gender_1">I am looking for :</label>
-                        <div class="age_box1" style="max-width: 100%; display: inline-block;">
-                            <select name="sex">
-                                <option value="">* Select Gender</option>
-                                <option value="male">male</option>
-                                <option value="female">female</option>
-                            </select>
-                        </div>
+                <div class="inline-block">
+                    <label class="gender_1">I am looking for :</label>
+                    <div class="age_box1" style="max-width: 100%; display: inline-block;">
+                        <select name="sex">
+                            <option value="">* Select Gender</option>
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                        </select>
                     </div>
+                </div>
 
                 {{--<div class="inline-block">--}}
                 {{--<label class="gender_1">Age :</label>--}}
@@ -214,6 +176,8 @@
                         <input class="form-control has-dark-background" name="surname" id="surname" placeholder="surname" type="text" required="">
                     </div>
                 </div>
+
+                <div></div>
                 <div class="submit inline-block">
                     <input id="submit-btn" class="hvr-wobble-vertical" type="submit" value="Find Matches">
                 </div>
@@ -436,6 +400,5 @@
     </div>
 
 </div>
-</body>
 </body>
 </html>

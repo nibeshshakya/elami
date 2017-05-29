@@ -210,17 +210,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
                         <input type="password" id="edit-pass" name="password" size="60" maxlength="128" class="form-text required">
                     </div>
-                    <div class="form-group">
+
+
+
+
+
+
+                        <div class="form-group">
                         <label for="edit-name">Email <span class="form-required" title="This field is required.">*</span></label>
                         <input type="email" id="email" name="email" value="" size="60" maxlength="60" class="form-text required">
                     </div>
                     </div>
-                    <div class="col-sm-6 login_left">
+
+                        <div class="col-sm-6 login_left">
+
+                            <div class="form-group">
+                                <label for="edit-name">Contact <span class="form-required" title="This field is required.">*</span></label>
+                                <input type="text" id="contact" name="contact" value="" size="60" maxlength="60" class="form-text required">
+                            </div>
+
+
 
                     <div class="form-group">
                         <label for="edit-name">Height <span class="form-required" title="This field is required.">*</span></label>
                         <input type="number" id="height" name="height" value="" size="60" maxlength="60" class="form-text required">
                     </div>
+
+
 
 
                     <div class="form-group">
@@ -232,7 +248,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label for="edit-pass">DOB <span class="form-required" title="This field is required.">*</span></label>
                         <div class="age_grid">
                             <div class="col-sm-4 form_box">
-                                <input type="text" id="dob" name="dob" value="" size="60" maxlength="60" class="form-text required">
+                                <input type="date" id="dob" name="dob" value="" size="60" maxlength="60" class="form-text required">
                             </div>
                         {{--</div>--}}
                         <div class="clearfix"> </div>
@@ -263,24 +279,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             {{--<input type="file" name="picture" id="picture">--}}
             {{--<div class="clearfix"> </div>--}}
         {{--</div>--}}
-
+                        <label for="edit-pass">Upload Photo <span class="form-required" title="This field is required.">*</span></label>
+                        <div class="age_grid">
+                            <div class="col-sm-4 form_box">
                 <input type="file" name="picture" id="picture" onchange="showMyImage(this)">
                 <br/>
                 <img id="thumbnil" style="width:20%; margin-top:10px;"  src="" alt="image"/>
+                            </div>
+                            {{--</div>--}}
+                            <div class="clearfix"> </div>
+                        </div>
 
 
 
                 <div class="clearfix"> </div>
+<br>
 
 
-
-                <div class="form-actions">
+                {{--<div class="form-actions">
                     <input type="submit" id="edit-submit" name="op" value="Submit" class="btn_1 submit">
-                </div>
+                </div>--}}
 
                     </div>
 
-                <div>
+                    <div class="form-actions">
+                        <input type="submit" id="edit-submit" name="op" value="Submit" class="btn_1 submit">
+                    </div>
+
+
+                    <div>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
                 </form>

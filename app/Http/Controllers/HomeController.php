@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\lami;
 use App\Models\Carrer;
+use App\Models\Socialstatus;
 use App\Models\Userinfo;
 use App\User;
 use DB;
@@ -114,7 +115,9 @@ class HomeController extends Controller
             $UserinfoObj->surname = $request->input('surname');
             $UserinfoObj->DOB = $request->input('dob');
             $UserinfoObj->password = $request->input('password');
+
             $UserinfoObj->email = $request->input('email');
+//            $UserinfoObj->contact = $request->input('contact');
             $UserinfoObj->height = $request->input('height');
             $UserinfoObj->sex = $request->input('sex');
             $UserinfoObj->age = $request->input('age');
@@ -147,12 +150,27 @@ class HomeController extends Controller
     public function insertInfo(Request $request)
     {
         try {
+            $user_id = Auth::user()->id;//currently logged in user ko id
             $CarrerObj = new Carrer();
 
-            $CarrerObj->jobtitle = $request->input('jtitle');
+            $CarrerObj->jobtitle = $request->input('jobtitle');
             $CarrerObj->edutitle = $request->input('edutitle');
             $CarrerObj->salary = $request->input('salary');
+            $CarrerObj->usersid = $user_id;
             $CarrerObj->save();
+
+
+            $SocialstatusObj=new Socialstatus();
+            $SocialstatusObj->mothertongue=$request->input('mothertongue');
+            $SocialstatusObj->religion=$request->input('religion');
+
+            $SocialstatusObj->user_id=$user_id;
+//            $Socialstatus->caste=$request->input('mothertongue');
+
+            $SocialstatusObj->save();
+
+
+
             return redirect('/lami');
 
 
@@ -176,7 +194,7 @@ class HomeController extends Controller
                 $gender='';
             }
        //     print_r($gender);die();
-            $result=Userinfo::Where('sex','<>',$gender)->paginate(7);
+            $result=Userinfo::Where('sex','<>',$gender)->paginate(4);
          //   print_r($result);die();
 
             if (count($result) == 0) {
@@ -234,7 +252,7 @@ class HomeController extends Controller
             $searchsurname = $request->input('surname');
 
             $user = DB::table('users')
-                ->select('users.email', 'userinfo.name', 'userinfo.height', 'userinfo.age', 'userinfo.sex', 'userinfo.surname', 'userinfo.firstname')
+                ->select('users.email', 'userinfo.name', 'userinfo.height', 'userinfo.age', 'userinfo.sex', 'userinfo.surname', 'userinfo.firstname','userinfo.picture')
                 ->join('userinfo', 'userinfo.user_id', '=', 'users.id')
 //            ->select('users.*', 'users.email', 'userinfo.name','userinfo.height')
                 ->whereBetween('age', array($startage, $endage))
@@ -266,28 +284,44 @@ class HomeController extends Controller
     public function advance(Request $request)
     {
         try {
-            $searchage = $request->input('age');
+            $startage = $request->input('startage');
+            $endage = $request->input('endage');
             $searchsex = $request->input('sex');
             $searchsurname = $request->input('surname');
+//            $searchjobtitle = $request->input('jobtitle');
 
+
+//            $searchaddress = $request->input('address');
+//            $searchreligion = $request->input('religion');
             $user = DB::table('users')
-                ->select('users.email', 'userinfo.name', 'userinfo.height', 'userinfo.age', 'userinfo.sex', 'userinfo.surname', 'userinfo.firstname')
+                ->select(
+                    'users.email', 'userinfo.name', 'userinfo.height', 'userinfo.age', 'userinfo.sex',
+                        'userinfo.surname', 'userinfo.firstname'
+//                    'socialstatus.religion',
+//                    'carrer.jobtitle','carrer.edutitle'
+                )
                 ->join('userinfo', 'userinfo.user_id', '=', 'users.id')
+//                ->join('socialstatus', 'socialstatus.user_id', '=', 'users.id')
+//                ->join('carrer', 'carrer.usersid', '=', 'users.id')
+
 //            ->select('users.*', 'users.email', 'userinfo.name','userinfo.height')
-                ->where('sex', '=', $searchsex)
+                ->where('userinfo.sex', '=', $searchsex)
 
-                ->orwhere('age', '=', $searchage)
+                ->whereBetween('userinfo.age', array($startage, $endage))
+                ->where('userinfo.surname', '=', $searchsurname)
+//                ->where('carrer.jobtitle', '=', $searchjobtitle)
+//                ->where('socialstatus.religion', '=', $searchreligion)
+//                ->orwhere('userinfo.address', '=', $searchaddress)
 
-                ->where('surname', '=', $searchsurname)
                 ->get();
-
+    print_r($user);  die();
             //last ma gareko
 
             if (count($user) == 0) {
 //                return view('lami.search')->with(['message' => 'no related search']);
                 return view('lami.searchresult')->with(['errormsz' => 'Sorry !!! No result found']);
             } else {
-                return view('lami.searchresult')->with(['users' => $user, 'successmsz' => 'match found for your search query']);
+                return view('lami.advanceresult')->with(['users' => $user, 'successmsz' => 'match found for your search query']);
             }
 //            print_r($user);
 
@@ -295,6 +329,24 @@ class HomeController extends Controller
         } catch (\Exception $e) {
             print_r($e);
         }
+
+    }
+
+
+
+
+    public function showDetail($id)
+    {
+        $result = Userinfo::select('*')->where('user_id', '=', $id)->first(); //app/model ko name rakhney
+//        print_r($result);die();
+
+        return view('lami.viewdetail')->with(['profiledata' => $result]);
+    }
+
+
+    public function showEdit()
+    {
+        return view('lami.editprofile');
 
     }
 

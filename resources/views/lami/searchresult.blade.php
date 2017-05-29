@@ -189,15 +189,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="jobs-item with-thumb">
                                 <div class="thumb_top">
                                     <div class="thumb"><a href="jobs_single.html">
-                                            <img src="images/a5.jpg" class="img-responsive" alt=""/>
+                                            {{--<img src="images/a5.jpg" class="img-responsive" alt="{{$userinfo->name}} {{$userinfo->surname}}"/>--}}
+                                            <img class="img-thumbnail img-responsive" max height="200" max width="200" src="{{ asset('uploads/user/avatar/'.$userinfo->picture) }}") }}" >
                                         </a></div>
                                     <div class="jobs_right">
-                                        <h6 class="title"><a href="view_profile.html">{{$userinfo->name}}</a></h6>
+                                        <h6 class="title"><a href="view_profile.html">{{$userinfo->name}} {{$userinfo->surname}}</a></h6>
                                         <h6 class="title"><a href="view_profile.html">age:{{$userinfo->age}}</a></h6>
                                         <h6 class="title"><a href="view_profile.html">height:{{$userinfo->height}}</a></h6>
                                         {{--<a href="view_profile.html" class="read-more">view full profile</a></p>--}}
+                                        @if (Auth::check())
+                                            <a href="{{route('login')}}" class="read-more">view full profile</a></p><br>
 
-                                        <a href="{{route('login')}}" class="read-more">view full profile</a></p>
+                                         @endif
                                     </div>
                                     <div class="clearfix"> </div>
                                 </div>

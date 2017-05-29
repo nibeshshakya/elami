@@ -139,10 +139,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>-->
     <form method="post" action="{{route('advancequery')}}">
         <div class="form_but1">
-            <label class="col-sm-5 control-lable1">sex : </label>
+            <label class="col-sm-5 control-lable1">gender : </label>
             <div class="col-sm-7 form_radios">
-                <div class="select-block1">
-                    <input class="form-control has-dark-background" name=sex id="slider-name" placeholder="sex" type="text" required="">
+                <div align="">
+                    <select name="sex" class="form-control">
+                        <option value="">* Select Gender</option>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+
+                    </select>
                 </div>
             </div>
 
@@ -162,10 +167,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </div> -->
 
         <div class="form_but1">
-            <label class="col-sm-5 control-lable1" for="sex">Age : </label>
-            <div class="col-sm-7 form_radios">
+            <label class="col-sm-5 control-lable1" for="age">Age : </label>
+            <div class="col-sm-4 form_radios">
                 <div class="select-block1">
-                    <input class="form-control has-dark-background" name="age" id="slider-name" placeholder="age" type="text" required="">
+                    <input class="transparent" name="startage" placeholder="From:" style="width: 34%;" type="text" value="">&nbsp;
+                    -
+                    &nbsp;
+                    <input class="transparent" name="endage" placeholder="To:" style="width: 34%;" type="text" value="">
                 </div>
             </div>
 
@@ -181,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <label class="col-sm-5 control-lable1" for="sex">surname : </label>
             <div class="col-sm-7 form_radios">
                 <div class="select-block1">
-                    <input class="form-control has-dark-background" name=surname id="surname" placeholder="surname" type="text" required="">
+                    <input class="form-control has-dark-background" name=surname id="surname" placeholder="surname" type="text">
                 </div>
             </div>
 
@@ -194,7 +202,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <label class="col-sm-5 control-lable1" for="religion">religion : </label>
             <div class="col-sm-7 form_radios">
                 <div class="select-block1">
-                    <input class="form-control has-dark-background" name='religion' id="religion" placeholder="religion" type="text" required="">
+                    <div align="">
+                        <select name="religion" class="form-control">
+                            <option value="">* Select religion</option>
+                            <option value="hinduism">Hinduism</option>
+                            <option value="buddhism">Buddhism</option>
+                            <option value="christianity">Christianity</option>
+                            <option value="muslim">Muslim</option>
+
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -206,7 +223,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <label class="col-sm-5 control-lable1" for="religion">address : </label>
             <div class="col-sm-7 form_radios">
                 <div class="select-block1">
-                    <input class="form-control has-dark-background" name='address' id="address" placeholder="address" type="text" required="">
+                    <input class="form-control has-dark-background" name='address' id="address" placeholder="address" type="text" >
                 </div>
             </div>
 
@@ -220,7 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <label class="col-sm-5 control-lable1" for="qualification">qualification : </label>
             <div class="col-sm-7 form_radios">
                 <div class="select-block1">
-                    <input class="form-control has-dark-background" name=qualification id="qualification" placeholder="qualification" type="text" required="">
+                    <input class="form-control has-dark-background" name=qualification id="qualification" placeholder="qualification" type="text" >
                 </div>
             </div>
 
@@ -232,7 +249,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <label class="col-sm-5 control-lable1" for="job">job : </label>
             <div class="col-sm-7 form_radios">
                 <div class="select-block1">
-                    <input class="form-control has-dark-background" name=job id="job" placeholder="job" type="text" required="">
+                    <input class="form-control has-dark-background" name=job id="job" placeholder="job" type="text" >
                 </div>
             </div>
 

@@ -92,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
 
 </script>
-<body>
+<>
 
 
 
@@ -194,8 +194,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <div class="jobs_right">
                                                 <h6 class="title"><a href="view_profile.html">{{$userinfo->name}}</a></h6>
                                                 <h6 class="title"><a href="view_profile.html">age:{{$userinfo->age}}</a></h6>
-                                                <h6 class="title">contact:9849192006</a></h6>
-                                                <h6 class="title"><a href="view_profile.html">address:kathmandu,sitapaila</a></h6>
+                                                <h6 class="title">contact:9849192006</h6>
+                                                {{--<h6 class="title"><a href="view_profile.html">address:kathmandu,sitapaila</a></h6>--}}
                                                 <a href="{{ route('profile') }}" class="read-more">view full profile</a></p>
                                             </div>
                                             <div class="clearfix"> </div>
@@ -219,9 +219,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </div>
                                         </div>
                                     </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
-
-
 </html>
+
 
 

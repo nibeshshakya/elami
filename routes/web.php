@@ -97,13 +97,13 @@ Route::post('/lami/register', ['uses' => 'HomeController@insertName', 'as' => 'i
 
 Route::get('/lami', ['uses' => 'HomeController@showIndex', 'as' => 'list'])->middleware('auth');
 //for additional info
-Route::get('/lami/addinfo', ['uses'=> 'HomeController@addInfo', 'as' =>'addinfo']);
-Route::post('/lami/addinfo', ['uses'=> 'HomeController@insertInfo', 'as' =>'insertinfo']);
+//Route::get('/lami/addinfo', ['uses'=> 'HomeController@addInfo', 'as' =>'addinfo']);
+//Route::post('/lami/addinfo', ['uses'=> 'HomeController@insertInfo', 'as' =>'insertinfo']);
 
 // for login
 Route::post('/lami/login', ['uses'=> 'LoginController@authenticate', 'as' =>'login']);
 //for logouts
-Route::get('/logout', ['uses'=>'LoginController@Logout','as'=>'logout']);
+Route::get('/logout', ['uses'=>'LoginController@logout','as'=>'logout']);
 Route::get('/register', ['uses'=>'LoginController@showRegister','as'=>'showreg']);
 //Route::get('/register', 'LoginController@showRegister');
 Route::get('/register', ['uses'=>'LoginController@showRegister','as'=>'showreg']);
@@ -134,4 +134,12 @@ Route::post('/lami/advancequery', ['uses'=> 'HomeController@advance', 'as' =>'ad
 
 //for profile
 
-Route::get('/lami/profile', ['uses'=> 'HomeController@viewProfile', 'as' =>'profile']);
+Route::get('/lami/profile', ['uses'=> 'HomeController@viewProfile', 'as' =>'profile'])->middleware('auth')  ;
+
+
+//for dashboard proffile
+Route::get('/lami/profile/{id}', ['uses'=> 'HomeController@viewProfile', 'as' => 'profile'])->middleware('auth');
+Route::get('/lami/viewdetail/{id}', ['uses'=> 'HomeController@showDetail', 'as' => 'viewdetail']);
+Route::get('/lami/editprofile', ['uses'=> 'HomeController@showEdit', 'as' => 'editprofile']);
+Route::post('/lami/editprofile', ['uses'=> 'HomeController@insertInfo', 'as' => 'insertinfo']);
+

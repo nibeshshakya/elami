@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     //
 
-
+//
 //    public function __construct()
 //    {
 //        $this->middleware('auth');
@@ -57,7 +57,7 @@ class LoginController extends Controller
 
 
     public function logout(){
-        \Auth::logout();
-        return redirect()->route('login');
+        Auth::logout();
+        return redirect('/lami/login');
     }
 }
