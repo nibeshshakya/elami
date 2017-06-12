@@ -5,53 +5,47 @@
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Light Bootstrap Dashboard by Creative Tim</title>
+    <title>elami | View Details</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="../asset/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ asset('dash-assets/css/bootstrap.min.css') }}" rel="stylesheet" />
 
-    <!-- Animation library for notifications   -->
-    <link href="../asset/css/animate.min.css" rel="stylesheet"/>
+
 
     <!--  Light Bootstrap Table core CSS    -->
-    <link href="../asset/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+    <link href="{{ asset('dash-assets/css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/>
 
 
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="../asset/css/demo.css" rel="stylesheet" />
 
-    <link href="../asset/css/style.css" rel="stylesheet" />
+
+    <link href="{{ asset('dash-assets/css/style3.css') }}" rel="stylesheet" />
 
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ asset('dash-assets/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
+    <link href="{{ asset('dash-assets/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+    <link href="{{ asset('dash-assets/css/animate.min.css') }}" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS    -->
-    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
-
-
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
+    <link href="{{ asset('dash-assets/css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/>
 
 
     <!--     Fonts and icons     -->
-    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="{{ asset('dash-assets/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
 
 </head>
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="red">
+    <div class="sidebar" data-color="gray">
 
         <!--
 
@@ -63,27 +57,31 @@
         <div class="sidebar-wrapper">
             <div class="logo">
 
-                <img src="images/logo_e3.png" alt="logo">
-                <img src="images/1.jpg" alt="profile" class="img-circle"  width="200" height="200">
+                <img src="{{asset('/images/logo_e3.png')}}" alt="logo">
+                {{--<img src="{{asset('../images/1.jpg')}}" alt="profile" class="img-circle"  width="200" height="200">--}}
+                <div class="day_value closed"><span><img class="img-thumbnail img-responsive" width="100px" height="100px" src="{{ asset('uploads/user/avatar/'.$profiledata->picture) }}" />
+                    </span>
+                </div>
+
+
                 <span class="profile-username" >
-                                            <center>James Grim<br></center>
-                                        </span>
+                     @if($profiledata)
+                                            <center>{{ $profiledata->name }}<br></center>
+
+                      @endif
+                </span>
 
             </div>
 
             <ul class="nav">
-                <li>
+               {{-- <li>
                     <a href="profile.html">
                         <p>View Profile</p>
                     </a>
-                </li>
+                </li>--}}
+
                 <li>
-                    <a href="viewdetails.html">
-                        <p>View details</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="editpro">
+                    <a href="{{route('editprofile')}}">
 
                         <p>Edit Profile</p>
                     </a>
@@ -94,7 +92,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{route('logout')}}">
                         <p>Logout</p>
                     </a>
                 </li>
@@ -194,11 +192,11 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                                 <ul class="nav navbar-nav nav_1">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about1.html">About</a></li>
-                                    <li><a href="search.html">Search</a></li>
-                                    <li><a href="success.html">SuccessStory</a></li>
-                                    <li class="last"><a href="contact1.html">Contacts</a></li>
+                                    <li><a href="{{route('list')}}">Home</a></li>
+                                    {{--<li><a href="{{route('about')}}">About</a></li>--}}
+                                    <li><a href="{{route('advancedsearch')}}">AdvanceSearch</a></li>
+                                    <li><a href="{{route('successstory')}}">SuccessStory</a></li>
+                                    {{--<li class="last"><a href="contact1.html">Contacts</a></li>--}}
 
                                 </ul>
                             </div><!-- /.navbar-collapse -->
@@ -213,7 +211,7 @@
             <div class="container">
                 <div class="breadcrumb1">
                     <ul>
-                        <a href="index.html"><i class="fa fa-home home_1"></i></a>
+                        <a href=""><i class="fa fa-home home_1"></i></a>
                         <span class="divider">&nbsp;|&nbsp;</span>
                         <li class="current-page">View Details</li>
                     </ul>
@@ -237,10 +235,10 @@
                                                         <td class="day_label">Name :</td>
                                                         <td class="day_value">{{ $profiledata->name }}</td>
                                                     </tr>
-                                                    <tr class="opened">
-                                                        <td class="day_label">DOB :</td>
-                                                        <td class="day_value">{{ $profiledata->dob }}</td>
-                                                    </tr>
+                                                    {{--<tr class="opened">--}}
+                                                        {{--<td class="day_label">DOB :</td>--}}
+                                                        {{--<td class="day_value">{{ $profiledata->dob }}</td>--}}
+                                                    {{--</tr>--}}
                                                     <tr class="opened">
                                                         <td class="day_label">Surname:</td>
                                                         <td class="day_value">{{ $profiledata->surname }}</td>
@@ -264,6 +262,7 @@
                                                     </tbody>
                                                     @endif
                                                     </tbody>
+
                                             </table>
                                         </div>
                                         <div class="clearfix"> </div>
@@ -273,22 +272,26 @@
                                         <div class="col-md-6 basic_1-left">
                                             <table class="table_working_hours">
                                                 <tbody>
+                                                @if($socialdata)
                                                 <tr class="opened">
-                                                    <td class="day_label">Religion:</td>
-                                                    <td class="day_value">Hindu</td>
+                                                    <td class="day_label">religion:</td>
+                                                    <td class="day_value">{{ $socialdata->religion }}</td>
                                                 </tr>
+
+                                                {{--<tr class="opened">--}}
+                                                    {{--<td class="day_label">Caste :</td>--}}
+                                                    {{--<td class="day_value">Bhramin</td>--}}
+                                                {{--</tr>--}}
                                                 <tr class="opened">
-                                                    <td class="day_label">Caste :</td>
-                                                    <td class="day_value">Bhramin</td>
+                                                    <td class="day_label">mothertongue:</td>
+                                                    <td class="day_value">{{ $socialdata->mothertongue }}</td>
                                                 </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Mother Tongue:</td>
-                                                    <td class="day_value closed"><span>True</span></td>
-                                                </tr>
+
                                                 <tr class="opened">
                                                     <td class="day_label">Intercaste :</td>
                                                     <td class="day_value closed"><span>Ok</span></td>
                                                 </tr>
+                                                @endif
                                                 </tbody>
                                             </table>
                                         </div>
@@ -299,130 +302,35 @@
                                         <div class="col-md-8 basic_1-left">
                                             <table class="table_working_hours">
                                                 <tbody>
+                                                {{--<tr class="opened">--}}
+                                                    {{--<td class="day_label">Education   :</td>--}}
+                                                    {{--<td class="day_value">Engineering</td>--}}
+                                                {{--</tr>--}}
+
+
+                                                @if($carrerdata)
                                                 <tr class="opened">
-                                                    <td class="day_label">Education   :</td>
-                                                    <td class="day_value">Engineering</td>
+                                                    <td class="day_label">jobtitle:</td>
+                                                    <td class="day_value">{{ $carrerdata->jobtitle }}</td>
+                                                </tr>
+
+                                                <tr class="opened">
+                                                    <td class="day_label">qualification:</td>
+                                                    <td class="day_value">{{ $carrerdata->edutitle }}</td>
                                                 </tr>
                                                 <tr class="opened">
-                                                    <td class="day_label">Job Details :</td>
-                                                    <td class="day_value">Software Engineer</td>
+                                                    <td class="day_label">salary:</td>
+                                                    <td class="day_value">{{ $carrerdata->salary }}</td>
                                                 </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Annual Income :</td>
-                                                    <td class="day_value closed"><span>Rs.5,00,000 - 6,00,000</span></td>
-                                                </tr>
+                                                    @endif
                                                 </tbody>
                                             </table>
                                         </div>
                                         <div class="clearfix"> </div>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-                                    <div class="basic_3">
-                                        <h4>Family Details</h4>
-                                        <div class="basic_1 basic_2">
-                                            <h3>Basics</h3>
-                                            <div class="col-md-6 basic_1-left">
-                                                <table class="table_working_hours">
-                                                    <tbody>
-                                                    <tr class="opened">
-                                                        <td class="day_label">Father's Occupation :</td>
-                                                        <td class="day_value">Not Specified</td>
-                                                    </tr>
-                                                    <tr class="opened">
-                                                        <td class="day_label">Mother's Occupation :</td>
-                                                        <td class="day_value">Not Specified</td>
-                                                    </tr>
-                                                    <tr class="opened">
-                                                        <td class="day_label">No. of Brothers :</td>
-                                                        <td class="day_value closed"><span>Not Specified</span></td>
-                                                    </tr>
-                                                    <tr class="opened">
-                                                        <td class="day_label">No. of Sisters :</td>
-                                                        <td class="day_value closed"><span>Not Specified</span></td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
-                                    <div class="basic_1 basic_2">
-                                        <div class="basic_1-left">
-                                            <table class="table_working_hours">
-                                                <tbody>
-                                                <tr class="opened">
-                                                    <td class="day_label">Age   :</td>
-                                                    <td class="day_value">28 to 35</td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Marital Status :</td>
-                                                    <td class="day_value">Single</td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Body Type :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Complexion :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Height 5ft 9 in / 175cm :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Diet :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Kujadosham / Manglik :</td>
-                                                    <td class="day_value closed"><span>No</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Religion :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Caste :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Mother Tongue :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Education :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Occupation :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Country of Residence :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">State :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                <tr class="opened">
-                                                    <td class="day_label">Residency Status :</td>
-                                                    <td class="day_value closed"><span>Doesn't matter</span></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
         <div class="footer">
             <div class="copy">
                 <p>Copyright © 2017 elami.com <a href="http://w3layouts.com/" target="_blank"></a> </p>

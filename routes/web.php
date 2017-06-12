@@ -125,7 +125,7 @@ Route::get('/lami/search', ['uses'=> 'HomeController@showSearch', 'as' =>'search
 
 
 Route::post('/lami/searchquery', ['uses'=> 'HomeController@search', 'as' =>'searchquery']);
-Route::get('/lami/advancesearch', ['uses'=> 'HomeController@advanceSearch', 'as' =>'advancedsearch']);
+Route::get('/lami/advancesearch', ['uses'=> 'HomeController@advanceSearch', 'as' =>'advancedsearch'])->middleware('auth');
 
 Route::post('/lami/advancequery', ['uses'=> 'HomeController@advance', 'as' =>'advancequery']);
 //Route::get('/lami/search', function(){
@@ -136,10 +136,21 @@ Route::post('/lami/advancequery', ['uses'=> 'HomeController@advance', 'as' =>'ad
 
 Route::get('/lami/profile', ['uses'=> 'HomeController@viewProfile', 'as' =>'profile'])->middleware('auth')  ;
 
+Route::get('lami/user/profile/view/{id}', ['uses' => 'HomeController@showUserProfile', 'as' => 'viewUserProfile'])->middleware('auth');
 
 //for dashboard proffile
 Route::get('/lami/profile/{id}', ['uses'=> 'HomeController@viewProfile', 'as' => 'profile'])->middleware('auth');
-Route::get('/lami/viewdetail/{id}', ['uses'=> 'HomeController@showDetail', 'as' => 'viewdetail']);
-Route::get('/lami/editprofile', ['uses'=> 'HomeController@showEdit', 'as' => 'editprofile']);
+Route::get('/lami/viewdetail/{id}', ['uses'=> 'HomeController@showDetail', 'as' => 'viewdetail'])->middleware('auth');
+Route::get('/lami/editprofile', ['uses'=> 'HomeController@showEdit', 'as' => 'editprofile'])->middleware('auth');
 Route::post('/lami/editprofile', ['uses'=> 'HomeController@insertInfo', 'as' => 'insertinfo']);
 
+
+
+Route::get('/lami/success', ['uses'=> 'HomeController@showSuccess', 'as' =>'successstory'])->middleware('auth');
+Route::post('/lami/successinsert', ['uses'=> 'HomeController@showStory', 'as' =>'insertsuccess']);
+
+
+
+//email
+
+Route::get('/email{id}', ['uses'=> 'HomeController@email', 'as' =>'sendemail']);

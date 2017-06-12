@@ -9,22 +9,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!-- Mirrored from p.w3layouts.com/demos/marital/web/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 May 2017 12:35:19 GMT -->
 <head>
-    <title>Marital an Wedding Category Flat Bootstarp Resposive Website Template | About :: w3layouts</title>
+    <title>elami | About</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Marital Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('css/bootstrap-3.1.1.min.css') }}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Custom Theme files -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <!----font-Awesome----->
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <!----font-Awesome----->
     <script>
         $(document).ready(function(){
@@ -42,22 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 </head>
 <body>
-<script src='../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-30027142-1', 'w3layouts.com');
-    ga('send', 'pageview');
-</script>
 
-<!-- ResponsiveW3layouts -->
-
-
-</div>
-</div>
-
-<!-- ============================  Navigation Start =========================== -->
 <div class="navbar navbar-inverse-blue navbar">
     <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
     <div class="navbar-inner navbar-inner_1">
@@ -127,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-6 about_right">
                 <h1>About us</h1>
                 <p>You believe in soulmates, so do we.
-                    Connect with your perfect one here, on elami. Shubhvivah Team is eager to help you find your partner at the earliest. Our customer care team will be pleased to assist you anytime you have a query. You can contact our customer care team in one of the following ways.</p>
+                    Connect with your perfect one here, on elami. elami Team is eager to help you find your partner at the earliest. Our customer care team will be pleased to assist you anytime you have a query. You can contact our customer care team in one of the following ways.</p>
 
             </div>
             <div class="clearfix"> </div>
@@ -137,22 +120,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 
 <div class="about_bottom">
-    <div class="container">
+    <div class="col-md-12">
         <h3>Team</h3>
         <div class="col-md-3 about_grid1">
             <ul class="posts-grid our-team">
                 <li class="list-item-1">
-                    <figure class="thumbnail_1 thumbnail">
-                        <a href="#"><img src="images/a4.jpg"  class="img-responsive" alt=""/></a>
-                        <div class="post_networks">
-                            <ul>
-                                <li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                            </ul>
-                        </div>
-                    </figure>
                     <div class="desc">
-                        <h4><a href="#">Perspiciatis</a></h4>
-                        <p>Lorem ipsum dolor sit amet,</p>
+                        <h4>Anish Silakar</h4>
                     </div>
                 </li>
             </ul>
@@ -160,17 +134,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-md-3 about_grid1">
             <ul class="posts-grid our-team">
                 <li class="list-item-1">
-                    <figure class="thumbnail_1 thumbnail">
-                        <a href="#"><img src="images/a5.jpg"  class="img-responsive" alt=""/></a>
-                        <div class="post_networks">
-                            <ul>
-                                <li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                            </ul>
-                        </div>
-                    </figure>
                     <div class="desc">
-                        <h4><a href="#">Aspernatur </a></h4>
-                        <p>Lorem ipsum dolor sit amet,</p>
+                        <h4>Jibindra Man Shakya</h4>
                     </div>
                 </li>
             </ul>
@@ -178,17 +143,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-md-3 about_grid1">
             <ul class="posts-grid our-team">
                 <li class="list-item-1">
-                    <figure class="thumbnail_1 thumbnail">
-                        <a href="#"><img src="images/a6.jpg"  class="img-responsive" alt=""/></a>
-                        <div class="post_networks">
-                            <ul>
-                                <li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                            </ul>
-                        </div>
-                    </figure>
                     <div class="desc">
-                        <h4><a href="#">Temporibus</a></h4>
-                        <p>Lorem ipsum dolor sit amet,</p>
+                        <h4>Nibesh Shakya</h4>
                     </div>
                 </li>
             </ul>
@@ -196,21 +152,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-md-3 about_grid1">
             <ul class="posts-grid our-team">
                 <li class="list-item-1">
-                    <figure class="thumbnail_1 thumbnail">
-                        <a href="#"><img src="images/a7.jpg"  class="img-responsive" alt=""/></a>
-                        <div class="post_networks">
-                            <ul>
-                                <li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                            </ul>
-                        </div>
-                    </figure>
                     <div class="desc">
-                        <h4><a href="#">Serferendis</a></h4>
-                        <p>Lorem ipsum dolor sit amet,</p>
+                        <h4>Nishant Nepali</h4>
                     </div>
                 </li>
             </ul>
         </div>
+        <div class="col-md-3 about_grid1">
+            <ul class="posts-grid our-team">
+                <li class="list-item-1">
+                    <div class="desc">
+                        <h4>Sujindra Maharjan</h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
         <div class="clearfix"> </div>
     </div>
 </div>

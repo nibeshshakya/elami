@@ -7,24 +7,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 
-<!-- Mirrored from p.w3layouts.com/demos/marital/web/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 May 2017 12:35:19 GMT -->
+<!-- Mirrored from p.w3layouts.com/demos/marital/web/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 May 2017 12:35:19 GMT -->
 <head>
-    <title>elami.com/login</title>
+    <title>elami.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Marital Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="../css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('css/bootstrap-3.1.1.min.css') }}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Custom Theme files -->
-    <link href="../css/style.css" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <!----font-Awesome----->
-    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <!----font-Awesome----->
     <script>
         $(document).ready(function(){
@@ -40,11 +38,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             );
         });
     </script>
+    <script type="text/javascript">
+        function AlertIt() {
+            var answer = confirm ("Please login to continue.")
+            if (answer)
+                window.location="{{ route('login') }}"
+        }
+    </script>
 </head>
 <body>
-
-<body>
-
 
 
 <!-- ============================  Navigation Start =========================== -->
@@ -133,9 +135,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="form-item form-type-password form-item-pass">
                         <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
                         <input type="password" id="password" name="password" size="60" maxlength="128" class="form-text required">
-                    </div>
+                    </div><br>
                     <div class="form-actions">
-                        <input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">
+                        <input type="submit" id="edit-submit" name="op" value="Log in" class="btn btn-primary">
+                        <a href="{{ route('register') }}" >
+                            <input type="button" id="button" name="btn" value="Register" class="btn btn-primary">
+
+                        </a>
+
                     </div>
                 <div>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

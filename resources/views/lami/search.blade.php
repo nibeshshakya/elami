@@ -47,24 +47,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 
-<!-- Mirrored from p.w3layouts.com/demos/marital/web/search.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 May 2017 12:35:26 GMT -->
+<!-- Mirrored from p.w3layouts.com/demos/marital/web/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 May 2017 12:35:19 GMT -->
 <head>
-    <title>elami.com | Search </title>
+    <title>elami.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Marital Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="../css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('css/bootstrap-3.1.1.min.css') }}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Custom Theme files -->
-    <link href="../css/style.css" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <!----font-Awesome----->
-    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <!----font-Awesome----->
     <script>
         $(document).ready(function(){
@@ -80,42 +78,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             );
         });
     </script>
+    <script type="text/javascript">
+        function AlertIt() {
+            var answer = confirm ("Please login to continue.")
+            if (answer)
+                window.location="{{ route('login') }}"
+        }
+    </script>
 </head>
 <body>
-<script src='../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-30027142-1', 'w3layouts.com');
-    ga('send', 'pageview');
-</script>
-<script async type='text/javascript' src='../../../../cdn.fancybar.net/ac/fancybar6a2f.js?zoneid=1502&amp;serve=C6ADVKE&amp;placement=w3layouts' id='_fancybar_js'></script>
-<style type='text/css'>  .adsense_fixed{position:fixed;bottom:-8px;width:100%;z-index:999999999999;}.adsense_content{width:720px;margin:0 auto;position:relative;background:#fff;}.adsense_btn_close,.adsense_btn_info{font-size:12px;color:#fff;height:20px;width:20px;vertical-align:middle;text-align:center;background:#000;top:4px;left:4px;position:absolute;z-index:99999999;font-family:Georgia;cursor:pointer;line-height:18px}.adsense_btn_info{left:26px;font-family:Georgia;font-style:italic}.adsense_info_content{display:none;width:260px;height:340px;position:absolute;top:-360px;background:rgba(255,255,255,.9);font-size:14px;padding:20px;font-family:Arial;border-radius:4px;-webkit-box-shadow:0 1px 26px -2px rgba(0,0,0,.3);-moz-box-shadow:0 1px 26px -2px rgba(0,0,0,.3);box-shadow:0 1px 26px -2px rgba(0,0,0,.3)}.adsense_info_content:after{content:'';position:absolute;left:25px;top:100%;width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #fff;clear:both}.adsense_info_content #adsense_h3{color:#000;margin:0;font-size:18px!important;font-family:'Arial'!important;margin-bottom:20px!important;}.adsense_info_content .adsense_p{color:#888;font-size:13px!important;line-height:20px;font-family:'Arial'!important;margin-bottom:20px!important;}.adsense_fh5co-team{color:#000;font-style:italic;}</style>
-<script>
-
-    $(function() {
-        $('.adsense_btn_close').click(function() {
-            $(this).closest('.adsense_fixed').css('display', 'none');
-        });
-
-        $('.adsense_btn_info').click(function() {
-            if ($('.adsense_info_content').is(':visible')) {
-                $('.adsense_info_content').css('display', 'none');
-            } else {
-                $('.adsense_info_content').css('display', 'block');
-            }
-        });
-
-    });
-
-</script>
-<body>
-
-
-
-<script async src='../../../../pagead2.googlesyndication.com/pagead/js/f.txt'></script>
-<!-- ResponsiveW3layouts -->
 
 
 <!-- ============================  Navigation Start =========================== -->
@@ -129,9 +100,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="green">
                             <a href="#" class="icon-home"></a>
                             <ul>
-                                <li><a href="{{route('login')}}">Login</a></li>
-                                <li><a href="{{route('register')}}">Register</a></li>
-                                {{--<li><a href="">Logout</a></li>--}}
+                                <li><a href="{{ route('login') }}">Login</a></li>
+                                <li><a href="{{ route('register') }}">Register</a></li>
+                                <!-- <li><a href="index-2.html">Logout</a></li> -->
                             </ul>
                         </li>
                     </ul>
@@ -169,7 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- ============================  Navigation End ============================ -->
 <div class="container">
     <div class="breadcrumb1">
-        <ul>
+        <ul><br>
             <a href="index-2.html"><i class="fa fa-home home_1"></i></a>
             <span class="divider">&nbsp;|&nbsp;</span>
             <li class="current-page">Regular Search</li>
@@ -185,7 +156,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>-->
     <form method="post" action="{{route('searchquery')}}">
         <div class="form_but1">
-            <label class="col-sm-5 control-lable1">sex : </label>
+            <label class="col-sm-2 control-lable1">sex : </label>
             <div class="col-sm-7 form_radios">
                 <div align="">
                     <select name="sex" class="form-control">
@@ -212,7 +183,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </div> -->
 
         <div class="form_but1">
-            <label class="col-sm-5 control-lable1" for="age">Age : </label>
+            <label class="col-sm-2 control-lable1" for="age">Age : </label>
             <div class="col-sm-4 form_radios">
                 <div class="select-block1">
                     <input class="transparent" name="startage" placeholder="From:" style="width: 34%;" type="text" value="">&nbsp;
@@ -231,7 +202,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
         <div class="form_but1">
-            <label class="col-sm-5 control-lable1" for="sex">surname : </label>
+            <label class="col-sm-2 control-lable1" for="sex">surname : </label>
             <div class="col-sm-7 form_radios">
                 <div class="select-block1">
                     <input class="form-control has-dark-background" name=surname id="surname" placeholder="surname" type="text" required="">

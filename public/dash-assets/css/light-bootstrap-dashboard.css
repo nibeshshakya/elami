@@ -1,18 +1,3 @@
-/*!
-    
- =========================================================
- * Light Bootstrap Dashboard - v1.3.1.0
- =========================================================
- 
- * Product Page: http://www.creative-tim.com/product/light-bootstrap-dashboard
- * Copyright 2017 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE.md)
- 
- =========================================================
- 
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- 
- */
 
 /*      light colors         */
 @keyframes spin {
@@ -127,7 +112,7 @@ h1 .subtitle {
 .text-muted {
   color: #9A9A9A;
 }
-
+/*
 .text-primary, .text-primary:hover {
   color: #1D62F0 !important;
 }
@@ -146,7 +131,7 @@ h1 .subtitle {
 
 .text-danger, .text-danger:hover {
   color: #FF4A55 !important;
-}
+}*/
 
 /*     General overwrite     */
 body,
@@ -1392,7 +1377,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   font-size: 20px;
 }
 .navbar .navbar-nav > li > a {
-  padding: 10px 15px;
+  padding: 4px 15px;
   margin: 10px 3px;
   position: relative;
 }
@@ -1905,7 +1890,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 .card .title {
   margin: 0;
-  color: #333333;
+  color: #fff;
   font-weight: 300;
 }
 .card .avatar {

@@ -76,12 +76,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav nav_1">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="about1.html">About</a></li>
-                            <li><a href="search.html">Search</a></li>
-                            <li><a href="success.html">SuccessStory</a></li>
-                            <li class="last"><a href="contact1.html">Contacts</a></li>
+                            <li><a href="{{route('list')}}">Home</a></li>
+
+
+                            <li><a href="{{route('advancedsearch')}}">AdvancedSearch</a></li>
+                            <li><a href="{{route('successstory')}}">SuccessStory</a></li>
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -118,12 +118,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                         <tr class="opened">
                                             <td class="day_label">Mother Tongue:</td>
-                                            <td class="day_value"><input type="text" name="mothertongue" size="15"></td>
+                                            <td class="day_value"><input type="text" name="mothertongue" size="62"></td>
                                         </tr>
 
                                         <tr class="opened">
                                             <td class="day_label">Religion:</td>
-                                            <td class="day_value"><input type="text" name="religion" size="15"></td>
+                                            <td class="day_value"><input type="text" name="religion" size="62"></td>
                                         </tr>
 
                                         {{--<tr class="opened">--}}
@@ -151,15 +151,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <tbody>
                                         <tr class="opened">
                                             <td class="day_label">Education   :</td>
-                                            <td class="day_value"><input type="text" name="edutitle" size="15"></td>
+                                            <td class="day_value"><select name="edutitle" class="form-control">
+                                                    <option value="">* Select your Qualification</option>
+                                                    <option value="see">S.E.E</option>
+                                                    <option value="slc">SLC</option>
+                                                    <option value="graduate">Graduate</option>
+                                                    <option value="diploma">Diploma</option>
+                                                    <option value="phd">PhD</option>
+
+                                                </select></td>
                                         </tr>
                                         <tr class="opened">
-                                            <td class="day_label">Job Details :</td>
-                                            <td class="day_value"><input type="text" name="jobtitle" size="15"></td>
+                                            <td class="day_label">Job Details:</td>
+                                            <td class="day_value"><input type="text" name="jobtitle" size="62"></td>
                                         </tr>
                                         <tr class="opened">
                                             <td class="day_label">Salary :</td>
-                                            <td class="day_value"><input type="text" name="salary" size="15"></td>
+                                            <td class="day_value"><input type="text" name="salary" size="62"></td>
                                         </tr>
                                         </tbody>
                                     </table>

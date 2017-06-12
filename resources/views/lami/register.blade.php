@@ -63,67 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 </head>
 <body>
-<script src='../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-30027142-1', 'w3layouts.com');
-    ga('send', 'pageview');
-</script>
-<script async type='text/javascript' src='../../../../cdn.fancybar.net/ac/fancybar6a2f.js?zoneid=1502&amp;serve=C6ADVKE&amp;placement=w3layouts' id='_fancybar_js'></script>
-<style type='text/css'>  .adsense_fixed{position:fixed;bottom:-8px;width:100%;z-index:999999999999;}.adsense_content{width:720px;margin:0 auto;position:relative;background:#fff;}.adsense_btn_close,.adsense_btn_info{font-size:12px;color:#fff;height:20px;width:20px;vertical-align:middle;text-align:center;background:#000;top:4px;left:4px;position:absolute;z-index:99999999;font-family:Georgia;cursor:pointer;line-height:18px}.adsense_btn_info{left:26px;font-family:Georgia;font-style:italic}.adsense_info_content{display:none;width:260px;height:340px;position:absolute;top:-360px;background:rgba(255,255,255,.9);font-size:14px;padding:20px;font-family:Arial;border-radius:4px;-webkit-box-shadow:0 1px 26px -2px rgba(0,0,0,.3);-moz-box-shadow:0 1px 26px -2px rgba(0,0,0,.3);box-shadow:0 1px 26px -2px rgba(0,0,0,.3)}.adsense_info_content:after{content:'';position:absolute;left:25px;top:100%;width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #fff;clear:both}.adsense_info_content #adsense_h3{color:#000;margin:0;font-size:18px!important;font-family:'Arial'!important;margin-bottom:20px!important;}.adsense_info_content .adsense_p{color:#888;font-size:13px!important;line-height:20px;font-family:'Arial'!important;margin-bottom:20px!important;}.adsense_fh5co-team{color:#000;font-style:italic;}</style>
-<script>
 
-    $(function() {
-        $('.adsense_btn_close').click(function() {
-            $(this).closest('.adsense_fixed').css('display', 'none');
-        });
-
-        $('.adsense_btn_info').click(function() {
-            if ($('.adsense_info_content').is(':visible')) {
-                $('.adsense_info_content').css('display', 'none');
-            } else {
-                $('.adsense_info_content').css('display', 'block');
-            }
-        });
-
-    });
-
-</script>
-<body>
-
-<div class='adsense_fixed'>
-    <div class='adsense_content'> <span class='adsense_btn_close' title='Hide Ads'>x</span>
-        <div class='adsense_info_content'>
-            <h3 id='adsense_h3'>Why Ads?</h3>
-            <p class='adsense_p'>We hope you'll understand us why we display Ads here at w3layouts. We use Ads in order for us to continue working and provide you new template every day. As we all know domain, hosting servers and designers is not free and
-                for us to pay it we have to display Ads. Thank you for Supporting Us.</p>
-            <p class='adsense_p'>Love,
-                <br><span class='adsense_fh5co-team'>w3layouts Team</span></p>
-        </div><span class='adsense_btn_info' title='Why Ads'>i</span>
-
-        <script async src='../../../../pagead2.googlesyndication.com/pagead/js/f.txt'></script>
-        <!-- ResponsiveW3layouts -->
-        <!-- <ins class='adsbygoogle'
-             style='display:block'
-             data-ad-client='ca-pub-9153409599391170'
-             data-ad-slot='7722137086'
-             data-ad-format='auto'></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-
-        <ins class='adsbygoogle'
-             style='display:inline-block;width:728px;height:90px'
-             data-ad-client='ca-pub-9153409599391170'
-             data-ad-slot='6850850687'></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script> -->
-
-    </div>
-</div>
 
 <!-- ============================  Navigation Start =========================== -->
 <div class="navbar navbar-inverse-blue navbar">
@@ -190,25 +130,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <div class="col-sm-6 login_left">
                     <div class="form-group">
+
                         <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
-                        <input type="text" id="name" name="name" value="" size="60" maxlength="60" class="form-text required">
+                        <input type="text" id="name" name="name" value="{{ old('name') }}" size="60" maxlength="60" class="form-text required">
+                        @if(isset($errors))
+                            <span class="">
+                                    {{$errors->register->first('name')}}
+                            </span>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="edit-name">First Name <span class="form-required" title="This field is required.">*</span></label>
-                        <input type="text" id="edit-name" name="firstname" value="" size="60" maxlength="60" class="form-text required">
+                        <input type="text" id="edit-name" name="firstname" value="{{ old('firstname') }}" size="60" maxlength="60" class="form-text required">
+                        @if(isset($errors))
+                            <span class="">
+                                    {{$errors->register->first('firstname')}}
+                            </span>
+                        @endif
+
                     </div>
 
                     <div class="form-group">
-                        <label for="edit-name">Middle Name <span class="form-required" title="This field is required."></span></label>
-                        <input type="text" id="edit-name" name="middlename" value="" size="60" maxlength="60" class="form-text required">
+                        <label for="edit-name">Middle Name </label>
+                        <input type="text" id="edit-name" name="middlename" value="{{ old('middlename') }}" size="60" maxlength="60" class="form-text required">
+
+                        @if(isset($errors))
+                            <span class="">
+                                    {{$errors->register->first('middlename')}}
+                            </span>
+                        @endif
+
                     </div>
                     <div class="form-group">
                         <label for="edit-name">Last Name <span class="form-required" title="This field is required.">*</span></label>
-                        <input type="text" id="edit-name" name="surname" value="" size="60" maxlength="60" class="form-text required">
+                        <input type="text" id="edit-name" name="surname" value="{{ old('surname') }}" size="60" maxlength="60" class="form-text required">
+                        @if(isset($errors))
+                            <span class="">
+                                    {{$errors->register->first('surname')}}
+                            </span>
+                        @endif
+
                     </div>
                     <div class="form-group">
                         <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
-                        <input type="password" id="edit-pass" name="password" size="60" maxlength="128" class="form-text required">
+                        <input type="password" id="edit-pass" name="password" value="{{ old('password') }}" size="60" maxlength="128" class="form-text required">
+
+                        @if(isset($errors))
+                            <span class="">
+                                    {{$errors->register->first('password')}}
+                            </span>
+                        @endif
+
                     </div>
 
 
@@ -219,21 +191,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="form-group">
                         <label for="edit-name">Email <span class="form-required" title="This field is required.">*</span></label>
                         <input type="email" id="email" name="email" value="" size="60" maxlength="60" class="form-text required">
+
+                            {{--@if(isset($errors))--}}
+                                {{--<span class="">--}}
+                                    {{--{{$errors->register->first('email')}}--}}
+                            {{--</span>--}}
+                            {{--@endif--}}
+                        {{--</div>--}}
                     </div>
                     </div>
 
-                        <div class="col-sm-6 login_left">
+                        <div class="col-sm-6 login_right">
 
                             <div class="form-group">
                                 <label for="edit-name">Contact <span class="form-required" title="This field is required.">*</span></label>
-                                <input type="text" id="contact" name="contact" value="" size="60" maxlength="60" class="form-text required">
+                                <input type="text" id="contact" name="contact" value="{{ old('contact') }}" size="60" maxlength="60" class="form-text required">
+                                @if(isset($errors))
+                                    <span class="">
+                                    {{$errors->register->first('contact')}}
+                            </span>
+                                @endif
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="edit-name">Address <span class="form-required" title="This field is required.">*</span></label>
+                                <input type="text" id="address" name="address" value="{{ old('address') }}" size="60" maxlength="60" class="form-text required">
+                                @if(isset($errors))
+                                    <span class="">
+                                    {{$errors->register->first('address')}}
+                            </span>
+                                @endif
+
                             </div>
 
 
-
-                    <div class="form-group">
+                            <div class="form-group">
                         <label for="edit-name">Height <span class="form-required" title="This field is required.">*</span></label>
-                        <input type="number" id="height" name="height" value="" size="60" maxlength="60" class="form-text required">
+                        <input type="text" id="height" name="height" value="{{ old('height') }}" size="60" maxlength="60" class="form-text required">
+                        @if(isset($errors))
+                            <span class="">
+                                    {{$errors->register->first('height')}}
+                            </span>
+                        @endif
                     </div>
 
 
@@ -241,18 +241,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <div class="form-group">
                         <label for="edit-name">Age <span class="form-required" title="This field is required.">*</span></label>
-                        <input type="number" id="age" name="age" value="" size="60" maxlength="60" class="form-text required">
+                        <input type="number" id="age" name="age" value="{{ old('age') }}" size="60" maxlength="60" class="form-text required">
+
+                        @if(isset($errors))
+                            <span class="">
+                                    {{$errors->register->first('age')}}
+                            </span>
+                        @endif
+
                     </div>
 
                     {{--<div class="age_select">--}}
-                        <label for="edit-pass">DOB <span class="form-required" title="This field is required.">*</span></label>
-                        <div class="age_grid">
-                            <div class="col-sm-4 form_box">
-                                <input type="date" id="dob" name="dob" value="" size="60" maxlength="60" class="form-text required">
-                            </div>
+                        {{--<label for="edit-pass">DOB <span class="form-required" title="This field is required.">*</span></label>--}}
+                        {{--<div class="age_grid">--}}
+                            {{--<div class="col-sm-4 form_box">--}}
+                                {{--<input type="date" id="dob" name="dob" value="{{ old('dob') }}" size="60" maxlength="60" class="form-text required">--}}
+                                {{--@if(isset($errors))--}}
+                                    {{--<span class="">--}}
+                                    {{--{{$errors->register->first('dob')}}--}}
+                            {{--</span>--}}
+                                {{--@endif--}}
+
+
+                            {{--</div>--}}
                         {{--</div>--}}
                         <div class="clearfix"> </div>
-                    </div>
+                        {{--</div>--}}
 
 
                     {{--<div class="age_select">--}}
@@ -279,6 +293,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             {{--<input type="file" name="picture" id="picture">--}}
             {{--<div class="clearfix"> </div>--}}
         {{--</div>--}}
+                            <br>
                         <label for="edit-pass">Upload Photo <span class="form-required" title="This field is required.">*</span></label>
                         <div class="age_grid">
                             <div class="col-sm-4 form_box">
@@ -293,8 +308,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
                 <div class="clearfix"> </div>
-<br>
 
+<br>
 
                 {{--<div class="form-actions">
                     <input type="submit" id="edit-submit" name="op" value="Submit" class="btn_1 submit">
@@ -302,8 +317,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     </div>
 
-                    <div class="form-actions">
-                        <input type="submit" id="edit-submit" name="op" value="Submit" class="btn_1 submit">
+                    <br>
+                    <div class="col-sm-6 login_left">
+                        <input type="submit" id="edit-submit" name="op" value="Submit" class="btn btn-primary">
                     </div>
 
 

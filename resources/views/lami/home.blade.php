@@ -74,7 +74,7 @@
                             <li><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="{{ route('about') }}">About</a></li>
                             <li><a href="{{ route('search') }}">Search</a></li>
-                            <li class="last"><a href="{{ route('contact') }}">Contacts</a></li>
+                            <li class="last"><a href="{{ route('contacts') }}">Contacts</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -87,7 +87,7 @@
 <div class="banner" style="position:relative; height: 100vh">
     <div class="container" style="padding: 100px 0 0 0">
         <div class="banner_info col-sm-8">
-            <h3>Millions of verified Members</h3>
+            <h3></h3>
             <!-- <a href="view_profile.html" class="hvr-shutter-out-horizontal">Create your Profile</a> -->
         </div>
         {{--<div class="col-sm-4 ">--}}
@@ -121,13 +121,16 @@
                 <div class="form-item form-type-password form-item-pass">
                     <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
                     <input type="password" id="password" name="password" size="60" maxlength="128" class="form-text required">
-                </div>
-                <div class="form-actions">
-                    <input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">
+                </div><br>
+                <div class="input-group1">
+                    <input type="submit" id="edit-submit" name="op" value="Log in">
+                 <a href="{{ route('register') }}" >
+                        <input type="button" id="button" name="btn" value="Register" class="btn btn-primary">
 
+                    </a>
 
-                    {{--<div class="form-actions">--}}
                 </div>
+
                 <div>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
@@ -173,11 +176,12 @@
                 <div class="inline-block">
                     <label class="gender_1">Surname :</label>
                     <div class="age_box1" style="max-width: 100%; display: inline-block;">
-                        <input class="form-control has-dark-background" name="surname" id="surname" placeholder="surname" type="text" required="">
+                        <input class="form-control has-dark-background" name="surname" id="surname" placeholder="surname" type="text" >
                     </div>
                 </div>
 
                 <div></div>
+                <br>
                 <div class="submit inline-block">
                     <input id="submit-btn" class="hvr-wobble-vertical" type="submit" value="Find Matches">
                 </div>
@@ -220,14 +224,14 @@
                         <h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>
             </li>
             <li><div class="col_1"><a href="view_profile.html">
-                        <img src="images/4.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
+                        <img src="images/1.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
                         <div class="layer m_1 hidden-link hover-animation delay1 fade-in">
                             <div class="center-middle">About Her</div>
                         </div>
                         <h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>
             </li>
             <li><div class="col_1"><a href="view_profile.html">
-                        <img src="images/5.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
+                        <img src="images/p17.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
                         <div class="layer m_1 hidden-link hover-animation delay1 fade-in">
                             <div class="center-middle">About Him</div>
                         </div>
@@ -281,111 +285,87 @@
             <i class="fa fa-heart grey-heart"></i>
             <span class="grey-line"></span>
         </div>
-        <div class="row_1">
-            <div class="col-md-8 suceess_story">
-                <ul>
-                    <li>
-                        <div class="suceess_story-date">
-                            <span class="entry-1">Dec 20, 2015</span>
-                        </div>
-                        <div class="suceess_story-content-container">
-                            <figure class="suceess_story-content-featured-image">
-                                <img width="75" height="75" src="images/7.jpg" class="img-responsive" alt=""/>
-                            </figure>
-                            <div class="suceess_story-content-info">
-                                <h4><a href="#">Lorem & Ipsum</a></h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="suceess_story-date">
-                            <span class="entry-1">Dec 20, 2015</span>
-                        </div>
-                        <div class="suceess_story-content-container">
-                            <figure class="suceess_story-content-featured-image">
-                                <img width="75" height="75" src="images/8.jpg" class="img-responsive" alt=""/>
-                            </figure>
-                            <div class="suceess_story-content-info">
-                                <h4><a href="#">Lorem & Ipsum</a></h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="suceess_story-date">
-                            <span class="entry-1">Dec 20, 2015</span>
-                        </div>
-                        <div class="suceess_story-content-container">
-                            <figure class="suceess_story-content-featured-image">
-                                <img width="75" height="75" src="images/9.jpg" class="img-responsive" alt=""/>
-                            </figure>
-                            <div class="suceess_story-content-info">
-                                <h4><a href="#">Lorem & Ipsum</a></h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="suceess_story-date">
-                            <span class="entry-1">Dec 20, 2015</span>
-                        </div>
-                        <div class="suceess_story-content-container">
-                            <figure class="suceess_story-content-featured-image">
-                                <img width="75" height="75" src="images/10.jpg" class="img-responsive" alt=""/>
-                            </figure>
-                            <div class="suceess_story-content-info">
-                                <h4><a href="#">Lorem & Ipsum</a></h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="suceess_story-date">
-                            <span class="entry-1">Dec 20, 2015</span>
-                        </div>
-                        <div class="suceess_story-content-container">
-                            <figure class="suceess_story-content-featured-image">
-                                <img width="75" height="75" src="images/11.jpg" class="img-responsive" alt=""/>
-                            </figure>
-                            <div class="suceess_story-content-info">
-                                <h4><a href="#">Lorem & Ipsum</a></h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="suceess_story-date">
-                            <span class="entry-1">Dec 20, 2015</span>
-                        </div>
-                        <div class="suceess_story-content-container">
-                            <figure class="suceess_story-content-featured-image">
-                                <img width="75" height="75" src="images/12.jpg" class="img-responsive" alt=""/>
-                            </figure>
-                            <div class="suceess_story-content-info">
-                                <h4><a href="#">Lorem & Ipsum</a></h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="suceess_story-date">
-                            <span class="entry-1">Dec 20, 2015</span>
-                        </div>
-                        <div class="suceess_story-content-container">
-                            <figure class="suceess_story-content-featured-image">
-                                <img width="75" height="75" src="images/13.jpg" class="img-responsive" alt=""/>
-                            </figure>
-                            <div class="suceess_story-content-info">
-                                <h4><a href="#">Lorem & Ipsum</a></h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,.<a href="#">More...</a></p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
 
-        </div>
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        {{--@if(isset($stories))--}}
+                            {{--@foreach($stories as $story)--}}
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="../images/12.jpg" alt="name" style="width: 200px; height: 200px;">
+                                <span style="position: relative; top: -187px;left: 215px;"><u>ram | sita</u>
+                                <br>
+                                    I'm truly thankful to elami for helping me meet with my soulmate. We expressed interest by exchanging
+                                    our profiles following which we met and to our pleasant surprise - we instantly liked each other and decided to go
+                                    ahead with a relationship that promises eternal love and care for each other.
+                                    Spending some of those wonderful moments together over coffee or
+                                    diving into this splendid feeling of love over a romantic dinner generated immense interest
+                                    in each other leading to get us know each other better every time we would meet.
+                                </span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/2.jpg" alt="name" style="width: 200px; height: 200px;">
+                                <span style="position: relative; top: -187px;left: 215px;"><u>Deepa | Deepak</u>
+                                <br>
+                                    I'm truly thankful to elami for helping me meet with my soulmate. We expressed interest by exchanging
+                                    our profiles following which we met and to our pleasant surprise - we instantly liked each other and decided to go
+                                    ahead with a relationship that promises eternal love and care for each other.
+                                    Spending some of those wonderful moments together over coffee or
+                                    diving into this splendid feeling of love over a romantic dinner generated immense interest
+                                    in each other leading to get us know each other better every time we would meet.
+                                </span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/1.jpg" alt="name" style="width: 200px; height: 200px;">
+                                <span style="position: relative; top: -187px;left: 215px;"><u>Raj | raani</u>
+                                <br>
+                                    I'm truly thankful to elami for helping me meet with my soulmate. We expressed interest by exchanging
+                                    our profiles following which we met and to our pleasant surprise - we instantly liked each other and decided to go
+                                    ahead with a relationship that promises eternal love and care for each other.
+                                    Spending some of those wonderful moments together over coffee or
+                                    diving into this splendid feeling of love over a romantic dinner generated immense interest
+                                    in each other leading to get us know each other better every time we would meet.
+                                </span>
+                            </div>
+                            <div class="item">
+                                <img src="../images/1.jpg" alt="name" style="width: 200px; height: 200px;">
+                                <span style="position: relative; top: -187px;left: 215px;"><u>Amrita</u>
+                                <br>
+                                    lkasjdflkasj ;asdl fkj sa;ldkfj laskdjf shdhsdlhf;lasdhfklasjdfl kjasd;fl kjdsa;lfh
+                                </span>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    {{--@endforeach--}}
+                    {{--@endif--}}
+
+
+
 
         <div class="footer">
             <div class="container">
